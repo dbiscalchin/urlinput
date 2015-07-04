@@ -1,8 +1,8 @@
 # URL Input
 
-**URL Input** is a jQuery plugin to provide user friendly text fields for URLs. It adds a link beside the input element to allow the user to test the inserted URL. It also enforces the presence of a protocol (HTTP or HTTPS).
+**URL Input** is a jQuery plugin to provide user-friendly text fields for URLs. It adds a link beside the input element to allow the user to test the inserted URL. It also enforces the presence of a protocol (HTTP or HTTPS).
 
-A demonstration is available at [JSFiddle](https://jsfiddle.net/0qjqnbng/).
+A demonstration is available at [JSFiddle](https://jsfiddle.net/0qjqnbng/1/).
 
 ## Requirements
 
@@ -32,11 +32,11 @@ This will set up the URL Input plugin on the selected fields.
 
 ## Settings
 
-Some custom settings can be provided when setting up the URL Input plugin. For example, the following settings could be provided to incorporate [Font Awesome](http://fortawesome.github.io/Font-Awesome/) and [Bootstrap](http://getbootstrap.com/):
+Some custom settings can be provided when setting up the URL Input plugin. For example, the following settings could be provided to apply a [Bootstrap](http://getbootstrap.com/) styling:
 
 ```
 $('#my_url').urlinput({
-  linkText: '<i class="fa fa-external-link"></i>',
+  linkText: '<span class="glyphicon glyphicon-new-window"></span>',
   linkClass: 'btn btn-default',
   linkWrapper: $('<span class="input-group-btn"></span>'),
 });
