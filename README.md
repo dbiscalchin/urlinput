@@ -2,7 +2,7 @@
 
 **URL Input** is a jQuery plugin to provide user friendly text fields for URLs. It adds a link beside the input element to allow the user to test the inserted URL. It also enforces the presence of a protocol (HTTP or HTTPS).
 
-A demonstration is availble in [JSFiddle](https://jsfiddle.net/0qjqnbng/).
+A demonstration is available at [JSFiddle](https://jsfiddle.net/0qjqnbng/).
 
 ## Requirements
 
