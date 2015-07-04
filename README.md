@@ -2,6 +2,10 @@
 
 A jQuery plugin for text fields used to provide URLs. It adds a link beside the input element to test the inserted URL. It also enforces the presence of a protocol (HTTP or HTTPS).
 
+## Requirements
+
+URL Input requires the [jQuery library](https://jquery.com/).
+
 ## Usage
 
 Create a form with a text field which will hold an URL.
