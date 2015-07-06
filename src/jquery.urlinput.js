@@ -16,9 +16,19 @@
       linkText: 'Try it!',
       linkClass: '',
       linkWrapper: $('<span></span>'),
+      showFavicon: true,
+      faviconWrapper: $('<span></span>'),
     }, options);
 
-    // Add link besides input
+    // Add icon before input
+    if (settings.showFavicon) {
+      var $wrapper = $(settings.faviconWrapper);
+      $wrapper.addClass('urlinput-icon-wrapper');
+      $wrapper.html('<img src="//www.google.com/s2/favicons" />');
+      this.before($wrapper);
+    }
+
+    // Add link after input
     var $wrapper = $(settings.linkWrapper);
     $wrapper.addClass('urlinput-link-wrapper');
     $wrapper.html('<a href="' + this.val() +'" target="_blank" class="' + settings.linkClass + '">' + settings.linkText  + '</a>');
@@ -50,7 +60,14 @@
           $this.val(val);
         }
 
-        $this.next('.urlinput-link-wrapper').find('a').attr('href', $this.val());
+        // Set link URL
+        var $link = $this.next('.urlinput-link-wrapper').find('a').attr('href', $this.val());
+
+        // Update favicon
+        if (settings.showFavicon) {
+          var faviconSrc = '//www.google.com/s2/favicons?domain=' + $link.prop('hostname');
+          $this.prev('.urlinput-icon-wrapper').find('img').attr('src', faviconSrc);
+        }
       });
 
       // Erase value when submitting if it has only the protocol
@@ -64,6 +81,3 @@
     return this;
   }
 }(jQuery));
-
-
-
