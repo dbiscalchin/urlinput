@@ -10,15 +10,13 @@
  */
 
 (function ($) {
-  jQuery.fn.urlinput = function (options) {
-    // Set default options
-    var settings = $.extend({
-      linkText: 'Try it!',
-      linkClass: '',
-      linkWrapper: $('<span></span>'),
-      showFavicon: true,
-      faviconWrapper: $('<span></span>'),
-    }, options);
+  $.fn.urlinput = function (options) {
+    // Set options based on theme or use default
+    var theme = 'default';
+    if (options && options.theme) {
+      theme = options.theme;
+    }
+    var settings = $.extend({}, $.fn.urlinput.themes[theme], options);
 
     // Add icon before input
     if (settings.showFavicon) {
@@ -80,4 +78,21 @@
 
     return this;
   }
+
+  $.fn.urlinput.themes = {
+    default: {
+      linkText: 'Try it!',
+      linkClass: '',
+      linkWrapper: $('<span></span>'),
+      showFavicon: true,
+      faviconWrapper: $('<span></span>'),
+    },
+    bootstrap: {
+      linkText: '<span class="glyphicon glyphicon-new-window"></span>',
+      linkClass: 'btn btn-default',
+      linkWrapper: $('<span class="input-group-btn"></span>'),
+      showFavicon: true,
+      faviconWrapper: $('<span class="input-group-addon"></span>'),
+    },
+  };
 }(jQuery));
