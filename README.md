@@ -1,8 +1,8 @@
 # URL Input
 
-**URL Input** is a jQuery plugin to provide user-friendly text fields for URLs. It adds a link on the right side of the input element to allow the user to test the inserted URL and shows the favicon of the inserted website (configurable). It also enforces the presence of a protocol (HTTP or HTTPS).
+**URL Input** is a jQuery plugin to provide user-friendly text fields for URLs. It adds a link on the right side of the input element to allow the user to test the inserted URL and shows the favicon of the inserted website (taken from [Google API](http://www.google.com/s2/favicons). It also enforces the presence of a protocol (HTTP or HTTPS).
 
-A demonstration is available at [JSFiddle](https://jsfiddle.net/0qjqnbng/2/).
+A demonstration is available at [JSFiddle](https://jsfiddle.net/0qjqnbng/3/).
 
 ## Requirements
 
@@ -32,13 +32,12 @@ This will set up the URL Input plugin on the selected fields.
 
 ## Settings
 
-Some custom settings can be provided when setting up the URL Input plugin. For example, the following settings could be provided to apply a [Bootstrap](http://getbootstrap.com/) styling:
+Some custom settings can be provided when setting up the URL Input plugin. For example, the following settings could be provided to change the link's text and add custom classes to it:
 
 ```
 $('#my_url').urlinput({
-  linkText: '<span class="glyphicon glyphicon-new-window"></span>',
+  linkText: 'Go!',
   linkClass: 'btn btn-default',
-  linkWrapper: $('<span class="input-group-btn"></span>'),
 });
 ```
 
@@ -48,3 +47,24 @@ The following settings are available:
 - **linkWrapper**: A jQuery object or HTML string with a custom wrapper to the anchor. Default: `$('<span></span>')`.
 - **showFavicon**: Whether to show the favicon of the inserted URL. Default: `true`,
 - **faviconWrapper**: A jQuery object or HTML string with a custom wrapper to the favicon. Default: `$('<span></span>')`.
+
+## Themes
+
+Instead of providing individual settings, by passing only the `theme` option to the plugin, will load a set of default values to provide a pre-defined appearance or behavior. For example, to apply a [Bootstrap](http://getbootstrap.com/) styling, a simple call like this would work:
+
+```
+$('#my_url').urlinput({ theme: 'bootstrap' });
+```
+
+Still, other properties can be passed to override theme values. For example, to replace the icon with a text:
+
+```
+$('#my_url').urlinput({
+  theme: 'bootstrap',
+  linkText: 'Go!',
+});
+```
+
+The following themes are avaliable:
+- **default**: Just load default settings. Can be omitted.
+- **bootstrap**: Apply a [Bootstrap](http://getbootstrap.com/) styling.
