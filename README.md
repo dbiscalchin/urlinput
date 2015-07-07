@@ -1,6 +1,6 @@
 # URL Input
 
-**URL Input** is a jQuery plugin to provide user-friendly text fields for URLs. It adds a link on the right side of the input element to allow the user to test the inserted URL and shows the favicon of the inserted website (taken from [Google API](http://www.google.com/s2/favicons). It also enforces the presence of a protocol (HTTP or HTTPS).
+**URL Input** is a jQuery plugin to provide user-friendly text fields for URLs. It adds a link on the right side of the input element to allow the user to test the inserted URL and shows the favicon of the inserted website (taken from [Google API](http://www.google.com/s2/favicons)). It also enforces the presence of a protocol (HTTP or HTTPS).
 
 A demonstration is available at [JSFiddle](https://jsfiddle.net/0qjqnbng/3/).
 
