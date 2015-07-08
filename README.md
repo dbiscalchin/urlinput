@@ -54,13 +54,13 @@ The following settings are available:
 
 ## Themes
 
-Instead of providing individual settings, by passing only the `theme` option to the plugin, will load a set of default values to provide a pre-defined appearance or behavior. For example, to apply a [Bootstrap](http://getbootstrap.com/) styling, a simple call like this would work:
+Instead of providing individual settings, by passing only the `theme` option, the plugin will load a set of default values to provide a pre-defined appearance or behavior. For example, to apply a [Bootstrap](http://getbootstrap.com/) styling, a simple call like this would work:
 
 ```
 $('#my_url').urlinput({ theme: 'bootstrap' });
 ```
 
-Still, other properties can be passed to override theme values. For example, to hide the website's icon:
+Still, other parameters can be passed to override theme values. For example, to hide the website's icon:
 
 ```
 $('#my_url').urlinput({
@@ -71,4 +71,4 @@ $('#my_url').urlinput({
 
 The following themes are available:
 - **default**: Just load default settings. Can be omitted.
-- **bootstrap**: Apply a [Bootstrap](http://getbootstrap.com/) styling.
+- **bootstrap**: Add [Bootstrap](http://getbootstrap.com/) classes.
