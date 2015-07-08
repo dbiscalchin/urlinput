@@ -48,6 +48,7 @@ The following settings are available:
 - **linkClass**: A string with custom classes separated by whitespaces added to the anchor. Default: `''`.
 - **linkWrapper**: A jQuery object or HTML string with a custom wrapper to the anchor. Default: `$('<span></span>')`.
 - **showFavicon**: Whether to show the favicon of the inserted URL. Default: `true`,
+- **faviconClass**: A string with custom classes separated by whitespaces added to the favicon. Default: `''`.
 - **faviconWrapper**: A jQuery object or HTML string with a custom wrapper to the favicon. Default: `$('<span></span>')`.
 - **widgetWrapper**: A jQuery object or HTML string with a custom wrapper to the whole widget. Default: ``$('<div></div>')``.
 
