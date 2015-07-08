@@ -23,6 +23,22 @@
     }
   }
 
+  function updateWidget(inputElem, settings) {
+    var $inputElem = $(inputElem);
+
+    // Add http protocol if not informed
+    addProtocol($inputElem);
+
+    // Set link URL
+    var $link = $inputElem.next('.urlinput-link-wrapper').find('a').attr('href', $inputElem.val());
+
+    // Update favicon
+    if (settings.showFavicon) {
+      var faviconSrc = '//www.google.com/s2/favicons?domain=' + $link.prop('hostname');
+      $inputElem.prev('.urlinput-icon-wrapper').find('img').attr('src', faviconSrc);
+    }
+  }
+
   $.fn.urlinput = function (options) {
     // Set options based on theme or use default
     var theme = 'default';
@@ -65,21 +81,28 @@
       // Add protocol to default value
       addProtocol($this);
 
-      // Add handler
-      $this.keyup(function (ev) {
+      // Set interval to update widget on focus
+      $this.focus(function (ev) {
         var $this = $(this); // updated element
 
-        // Add http protocol if not informed
-        addProtocol($this);
+        // Create iterval to check input and update widget
+        var updateInterval = setInterval(function () {
+          updateWidget($this, settings);
+        }, 2000);
+        $this.data('updateInterval', updateInterval);
+      });
 
-        // Set link URL
-        var $link = $this.next('.urlinput-link-wrapper').find('a').attr('href', $this.val());
+      // Remove interval to update widget on blur
+      $this.blur(function (ev) {
+        // Ensure data is updated
+        updateWidget($this, settings);
 
-        // Update favicon
-        if (settings.showFavicon) {
-          var faviconSrc = '//www.google.com/s2/favicons?domain=' + $link.prop('hostname');
-          $this.prev('.urlinput-icon-wrapper').find('img').attr('src', faviconSrc);
+        // Clear interval
+        var updateInterval = $this.data('updateInterval');
+        if (updateInterval) {
+          clearInterval(updateInterval);
         }
+        $this.data('updateInterval', false);
       });
 
       // Erase value when submitting if it has only the protocol
