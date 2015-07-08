@@ -40,6 +40,10 @@
     $linkWrapper.addClass('urlinput-link-wrapper');
     $linkWrapper.html('<a href="' + this.val() +'" target="_blank" class="' + settings.linkClass + '">' + settings.linkText  + '</a>');
     this.after($linkWrapper);
+    if (!settings.showLink) {
+      // Favicon depends on the link, so it is just hidden
+      $linkWrapper.hide();
+    }
 
     // Iterate over each element to add a different value and handler
     this.each(function (i, elem) {
@@ -91,6 +95,7 @@
   $.fn.urlinput.themes = {
     default: {
       fieldClass: '',
+      showLink: true,
       linkText: 'Try it!',
       linkClass: '',
       linkWrapper: $('<span></span>'),
