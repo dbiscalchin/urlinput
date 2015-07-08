@@ -16,21 +16,30 @@
     if (options && options.theme) {
       theme = options.theme;
     }
-    var settings = $.extend({}, $.fn.urlinput.themes[theme], options);
+    var settings = $.extend({}, $.fn.urlinput.themes['default'],
+                                $.fn.urlinput.themes[theme], options);
+
+    // Add wrapper to input element
+    var $widgetWrapper = $(settings.widgetWrapper);
+    $widgetWrapper.addClass('urlinput-widget-wrapper');
+    this.wrap($widgetWrapper);
+
+    // Add extra classes to input element
+    this.addClass('urlinput-field ' + settings.fieldClass);
 
     // Add icon before input
     if (settings.showFavicon) {
-      var $wrapper = $(settings.faviconWrapper);
-      $wrapper.addClass('urlinput-icon-wrapper');
-      $wrapper.html('<img src="//www.google.com/s2/favicons" />');
-      this.before($wrapper);
+      var $iconWrapper = $(settings.faviconWrapper);
+      $iconWrapper.addClass('urlinput-icon-wrapper');
+      $iconWrapper.html('<img src="//www.google.com/s2/favicons" />');
+      this.before($iconWrapper);
     }
 
     // Add link after input
-    var $wrapper = $(settings.linkWrapper);
-    $wrapper.addClass('urlinput-link-wrapper');
-    $wrapper.html('<a href="' + this.val() +'" target="_blank" class="' + settings.linkClass + '">' + settings.linkText  + '</a>');
-    this.after($wrapper);
+    var $linkWrapper = $(settings.linkWrapper);
+    $linkWrapper.addClass('urlinput-link-wrapper');
+    $linkWrapper.html('<a href="' + this.val() +'" target="_blank" class="' + settings.linkClass + '">' + settings.linkText  + '</a>');
+    this.after($linkWrapper);
 
     // Iterate over each element to add a different value and handler
     this.each(function (i, elem) {
@@ -81,18 +90,21 @@
 
   $.fn.urlinput.themes = {
     default: {
+      fieldClass: '',
       linkText: 'Try it!',
       linkClass: '',
       linkWrapper: $('<span></span>'),
       showFavicon: true,
       faviconWrapper: $('<span></span>'),
+      widgetWrapper: $('<div></div>'),
     },
     bootstrap: {
+      fieldClass: 'form-control',
       linkText: '<span class="glyphicon glyphicon-new-window"></span>',
       linkClass: 'btn btn-default',
       linkWrapper: $('<span class="input-group-btn"></span>'),
-      showFavicon: true,
       faviconWrapper: $('<span class="input-group-addon"></span>'),
+      widgetWrapper: $('<div class="input-group"></div>'),
     },
   };
 }(jQuery));
