@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Url Input : A jQuery plugin for user-friendly URL input fields.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Url Input</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/dbiscalchin/urlinput">View on GitHub</a>
+
+          <h1 id="project_title">Url Input</h1>
+          <h2 id="project_tagline">A jQuery plugin for user-friendly URL input fields.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/dbiscalchin/urlinput/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/dbiscalchin/urlinput/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="url-input" class="anchor" href="#url-input" aria-hidden="true"><span class="octicon octicon-link"></span></a>URL Input</h1>
+
+<p><strong>URL Input</strong> is a jQuery plugin to provide user-friendly text fields for URLs. It adds a link on the right side of the input element to allow the user to test the inserted URL and shows the favicon of the inserted website (taken from <a href="http://www.google.com/s2/favicons">Google API</a>). It also enforces the presence of a protocol (HTTP or HTTPS).</p>
+
+<p>A demonstration is available at <a href="https://jsfiddle.net/0qjqnbng/4/">JSFiddle</a>.</p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p>URL Input requires the <a href="https://jquery.com/">jQuery library</a>.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Create a form with a text field which will hold an URL:</p>
+
+<pre><code>&lt;form action="submit.php" method="POST"&gt;
+  &lt;label for="my_url"&gt;Some url&lt;/label&gt;
+  &lt;input type="text" name="my_url" id="my_url" /&gt;
+  &lt;input type="submit" value="Send" /&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>To use the default settings, just call <code>urlinput</code> method on the jQuery object:</p>
+
+<pre><code>jQuery(function ($) {
+  $('#my_url').urlinput();
+});
+</code></pre>
+
+<p>This will set up the URL Input plugin on the selected fields.</p>
+
+<h2>
+<a id="settings" class="anchor" href="#settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Settings</h2>
+
+<p>Some custom settings can be provided when setting up the URL Input plugin. For example, the following settings could be provided to change the link's text and add custom classes to it:</p>
+
+<pre><code>$('#my_url').urlinput({
+  linkText: 'Go!',
+  linkClass: 'btn btn-default',
+});
+</code></pre>
+
+<p>The following settings are available:</p>
+
+<ul>
+<li>
+<strong>fieldClass</strong>: A string with classes separated by whitespaces to be added to the input element. Default <code>''</code>.</li>
+<li>
+<strong>showLink</strong>: Whether to show the link for testing the URL. Default: <code>true</code>.</li>
+<li>
+<strong>linkText</strong>: A string with the text or HTML used for the link, inside the anchor. Default: <code>'Try it!'</code>.</li>
+<li>
+<strong>linkClass</strong>: A string with custom classes separated by whitespaces added to the anchor. Default: <code>''</code>.</li>
+<li>
+<strong>linkWrapper</strong>: A jQuery object or HTML string with a custom wrapper to the anchor. Default: <code>$('&lt;span&gt;&lt;/span&gt;')</code>.</li>
+<li>
+<strong>showFavicon</strong>: Whether to show the favicon of the inserted URL. Default: <code>true</code>,</li>
+<li>
+<strong>faviconClass</strong>: A string with custom classes separated by whitespaces added to the favicon. Default: <code>''</code>.</li>
+<li>
+<strong>faviconWrapper</strong>: A jQuery object or HTML string with a custom wrapper to the favicon. Default: <code>$('&lt;span&gt;&lt;/span&gt;')</code>.</li>
+<li>
+<strong>widgetWrapper</strong>: A jQuery object or HTML string with a custom wrapper to the whole widget. Default: <code>$('&lt;div&gt;&lt;/div&gt;')</code>.</li>
+</ul>
+
+<h2>
+<a id="themes" class="anchor" href="#themes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Themes</h2>
+
+<p>Instead of providing individual settings, by passing only the <code>theme</code> option to the plugin, will load a set of default values to provide a pre-defined appearance or behavior. For example, to apply a <a href="http://getbootstrap.com/">Bootstrap</a> styling, a simple call like this would work:</p>
+
+<pre><code>$('#my_url').urlinput({ theme: 'bootstrap' });
+</code></pre>
+
+<p>Still, other properties can be passed to override theme values. For example, to hide the website's icon:</p>
+
+<pre><code>$('#my_url').urlinput({
+  theme: 'bootstrap',
+  showFavicon: false,
+});
+</code></pre>
+
+<p>The following themes are avaliable:</p>
+
+<ul>
+<li>
+<strong>default</strong>: Just load default settings. Can be omitted.</li>
+<li>
+<strong>bootstrap</strong>: Apply a <a href="http://getbootstrap.com/">Bootstrap</a> styling.</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Url Input maintained by <a href="https://github.com/dbiscalchin">dbiscalchin</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
