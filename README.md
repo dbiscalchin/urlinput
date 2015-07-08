@@ -10,7 +10,7 @@ URL Input requires the [jQuery library](https://jquery.com/).
 
 ## Usage
 
-Create a form with a text field which will hold an URL.
+Create a form with a text field which will hold an URL:
 
 ```
 <form action="submit.php" method="POST">
@@ -20,7 +20,7 @@ Create a form with a text field which will hold an URL.
 </form>
 ```
 
-To use the default settings, just call `urlinput` method on the jQuery object.
+To use the default settings, just call `urlinput` method on the jQuery object:
 
 ```
 jQuery(function ($) {
@@ -60,12 +60,12 @@ Instead of providing individual settings, by passing only the `theme` option to 
 $('#my_url').urlinput({ theme: 'bootstrap' });
 ```
 
-Still, other properties can be passed to override theme values. For example, to replace the icon with a text:
+Still, other properties can be passed to override theme values. For example, to hide the website's icon:
 
 ```
 $('#my_url').urlinput({
   theme: 'bootstrap',
-  linkText: 'Go!',
+  showFavicon: false,
 });
 ```
 
