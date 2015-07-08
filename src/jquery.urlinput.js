@@ -10,6 +10,19 @@
  */
 
 (function ($) {
+
+  function addProtocol(elem) {
+    var $elem = $(elem);
+    var val = $elem.val();
+    var endProtocol = (val.length < 4)? val.length : 4;
+    var protocol = val.slice(0, endProtocol);
+    if (protocol != 'http'.slice(0, endProtocol) || val.length == 0) {
+      // Set val with http protocol
+      val = 'http://' + val;
+      $elem.val(val);
+    }
+  }
+
   $.fn.urlinput = function (options) {
     // Set options based on theme or use default
     var theme = 'default';
@@ -49,27 +62,15 @@
     this.each(function (i, elem) {
       var $this = $(this); // current element
 
-      // Set default value
-      var val = $this.val();
-      var protocol = val.slice(0, 4);
-      if (!(protocol == 'http')) {
-        // Set val with http protocol
-        val = 'http://' + val;
-        $this.val(val);
-      }
+      // Add protocol to default value
+      addProtocol($this);
 
       // Add handler
-      $this.change(function (ev) {
-        var $this = $(this); // changed element
-        var val = $this.val();
+      $this.keyup(function (ev) {
+        var $this = $(this); // updated element
 
         // Add http protocol if not informed
-        var protocol = val.slice(0, 4);
-        if (!(protocol == 'http')) {
-          // Set val with http protocol
-          val = 'http://' + val;
-          $this.val(val);
-        }
+        addProtocol($this);
 
         // Set link URL
         var $link = $this.next('.urlinput-link-wrapper').find('a').attr('href', $this.val());
