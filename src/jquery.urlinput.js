@@ -44,7 +44,7 @@
     if (settings.showFavicon) {
       var $iconWrapper = $(settings.faviconWrapper);
       $iconWrapper.addClass('urlinput-icon-wrapper');
-      $iconWrapper.html('<img src="//www.google.com/s2/favicons" />');
+      $iconWrapper.html('<img src="//www.google.com/s2/favicons" class="' + settings.faviconClass + '"/>');
       this.before($iconWrapper);
     }
 
@@ -101,6 +101,7 @@
       linkClass: '',
       linkWrapper: $('<span></span>'),
       showFavicon: true,
+      faviconClass: '',
       faviconWrapper: $('<span></span>'),
       widgetWrapper: $('<div></div>'),
     },
