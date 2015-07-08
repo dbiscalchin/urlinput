@@ -69,6 +69,6 @@ $('#my_url').urlinput({
 });
 ```
 
-The following themes are avaliable:
+The following themes are available:
 - **default**: Just load default settings. Can be omitted.
 - **bootstrap**: Apply a [Bootstrap](http://getbootstrap.com/) styling.
