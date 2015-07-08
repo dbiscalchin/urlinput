@@ -2,7 +2,7 @@
 
 **URL Input** is a jQuery plugin to provide user-friendly text fields for URLs. It adds a link on the right side of the input element to allow the user to test the inserted URL and shows the favicon of the inserted website (taken from [Google API](http://www.google.com/s2/favicons)). It also enforces the presence of a protocol (HTTP or HTTPS).
 
-A demonstration is available at [JSFiddle](https://jsfiddle.net/0qjqnbng/3/).
+A demonstration is available at [JSFiddle](https://jsfiddle.net/0qjqnbng/4/).
 
 ## Requirements
 
@@ -42,11 +42,14 @@ $('#my_url').urlinput({
 ```
 
 The following settings are available:
+- **fieldClass**: A string with classes separated by whitespaces to be added to the input element. Default ``''``.
+- **showLink**: Whether to show the link for testing the URL. Default: ``true``.
 - **linkText**: A string with the text or HTML used for the link, inside the anchor. Default: `'Try it!'`.
-- **linkClass**: A string with custom classes added to the anchor. Default: `''`.
+- **linkClass**: A string with custom classes separated by whitespaces added to the anchor. Default: `''`.
 - **linkWrapper**: A jQuery object or HTML string with a custom wrapper to the anchor. Default: `$('<span></span>')`.
 - **showFavicon**: Whether to show the favicon of the inserted URL. Default: `true`,
 - **faviconWrapper**: A jQuery object or HTML string with a custom wrapper to the favicon. Default: `$('<span></span>')`.
+- **widgetWrapper**: A jQuery object or HTML string with a custom wrapper to the whole widget. Default: ``$('<div></div>')``.
 
 ## Themes
 
