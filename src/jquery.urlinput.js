@@ -34,7 +34,8 @@
 
     // Update favicon
     if (settings.showFavicon) {
-      var faviconSrc = '//www.google.com/s2/favicons?domain=' + $link.prop('hostname');
+      var hostname = $link.prop('hostname');
+      var faviconSrc = '//www.google.com/s2/favicons?domain=' + ($hostname? $hostname : '.');
       $inputElem.prev('.urlinput-icon-wrapper').find('img').attr('src', faviconSrc);
     }
   }
