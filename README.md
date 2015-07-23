@@ -42,15 +42,15 @@ $('#my_url').urlinput({
 ```
 
 The following settings are available:
-- **fieldClass**: A string with classes separated by whitespaces to be added to the input element. Default ``''``.
-- **showLink**: Whether to show the link for testing the URL. Default: ``true``.
+- **fieldClass**: A string with classes separated by whitespaces to be added to the input element. Default `''`.
+- **showLink**: Whether to show the link for testing the URL. Default: `true`.
 - **linkText**: A string with the text or HTML used for the link, inside the anchor. Default: `'Try it!'`.
 - **linkClass**: A string with custom classes separated by whitespaces added to the anchor. Default: `''`.
-- **linkWrapper**: A jQuery object or HTML string with a custom wrapper to the anchor. Default: `$('<span></span>')`.
+- **linkWrapper**: A jQuery object or HTML string with a custom wrapper to the anchor. Default: `'<span></span>'`.
 - **showFavicon**: Whether to show the favicon of the inserted URL. Default: `true`,
 - **faviconClass**: A string with custom classes separated by whitespaces added to the favicon. Default: `''`.
-- **faviconWrapper**: A jQuery object or HTML string with a custom wrapper to the favicon. Default: `$('<span></span>')`.
-- **widgetWrapper**: A jQuery object or HTML string with a custom wrapper to the whole widget. Default: ``$('<div></div>')``.
+- **faviconWrapper**: A jQuery object or HTML string with a custom wrapper to the favicon. Default: `'<span></span>'`.
+- **widgetWrapper**: A jQuery object or HTML string with a custom wrapper to the whole widget. Default: `'<div></div>'`.
 
 ## Themes
 
