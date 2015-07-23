@@ -35,7 +35,7 @@
     // Update favicon
     if (settings.showFavicon) {
       var hostname = $link.prop('hostname');
-      var faviconSrc = '//www.google.com/s2/favicons?domain=' + ($hostname? $hostname : '.');
+      var faviconSrc = '//www.google.com/s2/favicons?domain=' + (hostname? hostname : '.');
       $inputElem.prev('.urlinput-icon-wrapper').find('img').attr('src', faviconSrc);
     }
   }
@@ -61,7 +61,7 @@
     if (settings.showFavicon) {
       var $iconWrapper = $(settings.faviconWrapper);
       $iconWrapper.addClass('urlinput-icon-wrapper');
-      $iconWrapper.html('<img src="//www.google.com/s2/favicons" class="' + settings.faviconClass + '"/>');
+      $iconWrapper.html('<img src="//www.google.com/s2/favicons?domain=." class="' + settings.faviconClass + '"/>');
       this.before($iconWrapper);
     }
 
