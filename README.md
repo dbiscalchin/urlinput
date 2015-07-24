@@ -17,7 +17,7 @@ Download the [production version][min] or the [development version][max].
 
 In your web page, create a form with a text field which will hold an URL. For example:
 
-```
+```html
 <form action="submit.php" method="POST">
   <label for="my_url">Some url</label>
   <input type="text" name="my_url" id="my_url" />
@@ -41,7 +41,7 @@ Then, set up URL Input on the appropriate fields:
 
 Some custom settings can be provided when setting up the URL Input plugin. For example, the following settings could be provided to change the link's text and add custom classes to it:
 
-```
+```html
 $('#my_url').urlinput({
   linkText: 'Go!',
   linkClass: 'btn btn-default',
@@ -63,13 +63,13 @@ The following settings are available:
 
 Instead of providing individual settings, by passing only the `theme` option, the plugin will load a set of default values to provide a pre-defined appearance or behavior. For example, to apply a [Bootstrap](http://getbootstrap.com/) styling, a simple call like this would work:
 
-```
+```html
 $('#my_url').urlinput({ theme: 'bootstrap' });
 ```
 
 Still, other parameters can be passed to override theme values. For example, to hide the website's icon:
 
-```
+```html
 $('#my_url').urlinput({
   theme: 'bootstrap',
   showFavicon: false,
