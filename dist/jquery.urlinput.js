@@ -70,8 +70,8 @@
     this.each(function (i, elem) {
       var $this = $(this); // current element
 
-      // Add protocol to default value
-      addProtocol($this);
+      // Update based on the pre-filled value
+      updateWidget($this, settings);
 
       // Set interval to update widget on focus
       $this.focus(function (ev) {
@@ -106,7 +106,7 @@
     });
 
     return this;
-  }
+  };
 
   $.fn.urlinput.themes = {
     default: {
