@@ -36,50 +36,51 @@
 
 <p><strong>URL Input</strong> is a jQuery plugin to provide user-friendly text fields for URLs. It adds a link on the right side of the input element to allow the user to test the inserted URL and shows the favicon of the inserted website (taken from <a href="http://www.google.com/s2/favicons">Google API</a>). It also enforces the presence of a protocol (HTTP or HTTPS).</p>
 
-<p>A demonstration is available at <a href="https://jsfiddle.net/0qjqnbng/4/">JSFiddle</a>.</p>
+<p>A demonstration is available at <a href="https://jsfiddle.net/0qjqnbng/5/">JSFiddle</a>.</p>
 
 <h2>
 <a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
 
-<p>URL Input requires the <a href="https://jquery.com/">jQuery library</a>.</p>
+<p>URL Input requires the <a href="https://jquery.com/">jQuery library</a> v1.6.4 or later.</p>
 
 <h2>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
 
-<p>Create a form with a text field which will hold an URL:</p>
+<p>Download the <a href="https://raw.githubusercontent.com/dbiscalchin/urlinput/master/dist/jquery.urlinput.min.js">production version</a> or the <a href="https://raw.githubusercontent.com/dbiscalchin/urlinput/master/dist/jquery.urlinput.js">development version</a>.</p>
 
-<pre><code>&lt;form action="submit.php" method="POST"&gt;
-  &lt;label for="my_url"&gt;Some url&lt;/label&gt;
-  &lt;input type="text" name="my_url" id="my_url" /&gt;
-  &lt;input type="submit" value="Send" /&gt;
-&lt;/form&gt;
-</code></pre>
+<p>In your web page, create a form with a text field which will hold an URL. For example:</p>
 
-<p>To use the default settings, just call <code>urlinput</code> method on the jQuery object:</p>
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">form</span> <span class="pl-e">action</span>=<span class="pl-s"><span class="pl-pds">"</span>submit.php<span class="pl-pds">"</span></span> <span class="pl-e">method</span>=<span class="pl-s"><span class="pl-pds">"</span>POST<span class="pl-pds">"</span></span>&gt;
+  &lt;<span class="pl-ent">label</span> <span class="pl-e">for</span>=<span class="pl-s"><span class="pl-pds">"</span>my_url<span class="pl-pds">"</span></span>&gt;Some url&lt;/<span class="pl-ent">label</span>&gt;
+  &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>my_url<span class="pl-pds">"</span></span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>my_url<span class="pl-pds">"</span></span> /&gt;
+  &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>submit<span class="pl-pds">"</span></span> <span class="pl-e">value</span>=<span class="pl-s"><span class="pl-pds">"</span>Send<span class="pl-pds">"</span></span> /&gt;
+&lt;/<span class="pl-ent">form</span>&gt;</pre></div>
 
-<pre><code>jQuery(function ($) {
-  $('#my_url').urlinput();
-});
-</code></pre>
+<p>Then, set up URL Input on the appropriate fields:</p>
 
-<p>This will set up the URL Input plugin on the selected fields.</p>
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>jquery.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>dist/urlinput.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+<span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">  jQuery(<span class="pl-k">function</span> (<span class="pl-smi">$</span>) {</span>
+<span class="pl-s1">    $(<span class="pl-s"><span class="pl-pds">'</span>#my_url<span class="pl-pds">'</span></span>).urlinput(); <span class="pl-c">// Sets up URL Input on the selected fields</span></span>
+<span class="pl-s1">  });</span>
+<span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
 
 <h2>
 <a id="settings" class="anchor" href="#settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Settings</h2>
 
 <p>Some custom settings can be provided when setting up the URL Input plugin. For example, the following settings could be provided to change the link's text and add custom classes to it:</p>
 
-<pre><code>$('#my_url').urlinput({
-  linkText: 'Go!',
-  linkClass: 'btn btn-default',
-});
-</code></pre>
+<div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#my_url<span class="pl-pds">'</span></span>).urlinput({
+  linkText<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Go!<span class="pl-pds">'</span></span>,
+  linkClass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>btn btn-default<span class="pl-pds">'</span></span>,
+});</pre></div>
 
 <p>The following settings are available:</p>
 
 <ul>
 <li>
-<strong>fieldClass</strong>: A string with classes separated by whitespaces to be added to the input element. Default <code>''</code>.</li>
+<strong>fieldClass</strong>: A string with classes separated by whitespaces to be added to the input element. Default: <code>''</code>.</li>
 <li>
 <strong>showLink</strong>: Whether to show the link for testing the URL. Default: <code>true</code>.</li>
 <li>
@@ -103,18 +104,16 @@
 
 <p>Instead of providing individual settings, by passing only the <code>theme</code> option, the plugin will load a set of default values to provide a pre-defined appearance or behavior. For example, to apply a <a href="http://getbootstrap.com/">Bootstrap</a> styling, a simple call like this would work:</p>
 
-<pre><code>$('#my_url').urlinput({ theme: 'bootstrap' });
-</code></pre>
+<div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#my_url<span class="pl-pds">'</span></span>).urlinput({ theme<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>bootstrap<span class="pl-pds">'</span></span> });</pre></div>
 
 <p>Still, other parameters can be passed to override theme values. For example, to hide the website's icon:</p>
 
-<pre><code>$('#my_url').urlinput({
-  theme: 'bootstrap',
-  showFavicon: false,
-});
-</code></pre>
+<div class="highlight highlight-js"><pre>$(<span class="pl-s"><span class="pl-pds">'</span>#my_url<span class="pl-pds">'</span></span>).urlinput({
+  theme<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>bootstrap<span class="pl-pds">'</span></span>,
+  showFavicon<span class="pl-k">:</span> <span class="pl-c1">false</span>,
+});</pre></div>
 
-<p>The following themes are available:</p>
+<p>The following themes are currently available:</p>
 
 <ul>
 <li>
@@ -122,6 +121,11 @@
 <li>
 <strong>bootstrap</strong>: Add <a href="http://getbootstrap.com/">Bootstrap</a> classes.</li>
 </ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT © Daniel Catarino Biscalchin</p>
       </section>
     </div>
 
