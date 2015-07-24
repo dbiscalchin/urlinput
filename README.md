@@ -2,7 +2,7 @@
 
 **URL Input** is a jQuery plugin to provide user-friendly text fields for URLs. It adds a link on the right side of the input element to allow the user to test the inserted URL and shows the favicon of the inserted website (taken from [Google API](http://www.google.com/s2/favicons)). It also enforces the presence of a protocol (HTTP or HTTPS).
 
-A demonstration is available at [JSFiddle](https://jsfiddle.net/0qjqnbng/4/).
+A demonstration is available at [JSFiddle](https://jsfiddle.net/0qjqnbng/5/).
 
 ## Requirements
 
@@ -12,8 +12,8 @@ URL Input requires the [jQuery library](https://jquery.com/) v1.6.4 or later.
 
 Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.githubusercontent.com/dbiscalchin/jquery-urlinput/master/dist/jquery.urlinput.min.js
-[max]: https://raw.githubusercontent.com/dbiscalchin/jquery-urlinput/master/dist/jquery.urlinput.js
+[min]: https://raw.githubusercontent.com/dbiscalchin/urlinput/master/dist/jquery.urlinput.min.js
+[max]: https://raw.githubusercontent.com/dbiscalchin/urlinput/master/dist/jquery.urlinput.js
 
 In your web page, create a form with a text field which will hold an URL. For example:
 
