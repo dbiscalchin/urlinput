@@ -4,6 +4,6 @@
   "dependencies": {},
   "devDependencies": {
     "qunit": "~1.12.0",
-    "jquery": ">=1.6.4"
+    "jquery": "~1.6.4"
   }
 }
