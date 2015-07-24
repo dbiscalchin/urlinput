@@ -1,14 +1,14 @@
-
-/**
+/*
  * URL Input plugin for jQuery
- * @author Daniel Catarino Biscalchin
  *
  * Provides a widget for text inputs holding URL values.
  * It enforces the protocol and adds a link to test the URL.
  *
  * Basic usage: $('#my-text-input').urlinput()
+ *
+ * Copyright (c) 2015 Daniel Catarino Biscalchin
+ * Licensed under the MIT license.
  */
-
 (function ($) {
 
   function addProtocol(elem) {
@@ -115,7 +115,7 @@
     });
 
     return this;
-  }
+  };
 
   $.fn.urlinput.themes = {
     default: {

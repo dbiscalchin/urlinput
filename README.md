@@ -6,11 +6,16 @@ A demonstration is available at [JSFiddle](https://jsfiddle.net/0qjqnbng/4/).
 
 ## Requirements
 
-URL Input requires the [jQuery library](https://jquery.com/).
+URL Input requires the [jQuery library](https://jquery.com/) v1.6.4 or later.
 
-## Usage
+## Getting Started
 
-Create a form with a text field which will hold an URL:
+Download the [production version][min] or the [development version][max].
+
+[min]: https://raw.githubusercontent.com/dbiscalchin/jquery-urlinput/master/dist/jquery.urlinput.min.js
+[max]: https://raw.githubusercontent.com/dbiscalchin/jquery-urlinput/master/dist/jquery.urlinput.js
+
+In your web page, create a form with a text field which will hold an URL. For example:
 
 ```
 <form action="submit.php" method="POST">
@@ -20,15 +25,17 @@ Create a form with a text field which will hold an URL:
 </form>
 ```
 
-To use the default settings, just call `urlinput` method on the jQuery object:
+Then, set up URL Input on the appropriate fields:
 
+```html
+<script src="jquery.js"></script>
+<script src="dist/urlinput.min.js"></script>
+<script>
+  jQuery(function ($) {
+    $('#my_url').urlinput(); // Sets up URL Input on the selected fields
+  });
+</script>
 ```
-jQuery(function ($) {
-  $('#my_url').urlinput();
-});
-```
-
-This will set up the URL Input plugin on the selected fields.
 
 ## Settings
 
@@ -42,7 +49,7 @@ $('#my_url').urlinput({
 ```
 
 The following settings are available:
-- **fieldClass**: A string with classes separated by whitespaces to be added to the input element. Default `''`.
+- **fieldClass**: A string with classes separated by whitespaces to be added to the input element. Default: `''`.
 - **showLink**: Whether to show the link for testing the URL. Default: `true`.
 - **linkText**: A string with the text or HTML used for the link, inside the anchor. Default: `'Try it!'`.
 - **linkClass**: A string with custom classes separated by whitespaces added to the anchor. Default: `''`.
@@ -69,6 +76,10 @@ $('#my_url').urlinput({
 });
 ```
 
-The following themes are available:
+The following themes are currently available:
 - **default**: Just load default settings. Can be omitted.
 - **bootstrap**: Add [Bootstrap](http://getbootstrap.com/) classes.
+
+## License
+
+MIT © Daniel Catarino Biscalchin
